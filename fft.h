@@ -5,6 +5,6 @@
 #include <stdint.h>
 #include <complex.h>
 
-void fft_slow(int* x, double complex* X, uint16_t N);
+void fft_slow(const int* in, double complex* out, uint16_t N);
 
-void fft(int* x, double complex* X, uint16_t N);
+void fft(const int* in, double complex* out, uint16_t N);

@@ -6,7 +6,7 @@
 
 #define PI 3.14159265358979323846
 
-void fft_slow(int* x, double complex* X, unsigned int N) {
+void fft_slow(const int* x, double complex* X, unsigned int N) {
     unsigned int n, k;
 
     // Iterate through, allowing X_K = sum_N of the complex frequencies.
@@ -17,7 +17,7 @@ void fft_slow(int* x, double complex* X, unsigned int N) {
     }
 }
 
-void fft_radix2(int* x, double complex* X, unsigned int N, unsigned int s) {
+void fft_radix2(const int* x, double complex* X, unsigned int N, unsigned int s) {
     unsigned int k;
     double complex t;
 
@@ -38,6 +38,6 @@ void fft_radix2(int* x, double complex* X, unsigned int N, unsigned int s) {
     }
 }
 
-void fft(int* x, double complex* X, unsigned int N) {
+void fft(const int* x, double complex* X, unsigned int N) {
     fft_radix2(x, X, N, 1);
 }
